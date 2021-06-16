@@ -16,14 +16,30 @@ function TopMenu() {
                 return res.json();
             })
             .then(data => {
-                setMenus(data.resultData);
+                console.log(data.resultData.list)
+                setMenus(data.resultData.list);
             });
     }, []);
     console.log(menus);
-    return (
-        <ul className="menu">
 
-        </ul>
+    const menuList = menus.map((data,i) =>
+            <li key={i}><a href="#">{data.cdname}</a>
+                <ul className="lnb">
+                    { data.codeList.map((lnb,j) =>
+                        <li key={j}><a href="#">{lnb.cdname}</a></li>
+                    )}
+                </ul>
+            </li>
+
+        );
+
+    return (
+        <>
+            <ul className="menu">
+                {menuList}
+                <li id="menu_all"><a href="#">메뉴 전체보기</a></li>
+            </ul>
+        </>
     )
 }
 export default TopMenu;

@@ -1,5 +1,6 @@
 import React from 'react'
 import TopMenu from "./TopMenu";
+import TopMenuAll from "./TopMenuAll";
 import logo from '../../images/header/logo.png';
 function Header({ title, backFunc, params, noBackBtn }) {
         return (
@@ -34,6 +35,7 @@ function Header({ title, backFunc, params, noBackBtn }) {
                     {/*<jsp:include page="/common/topMenu"/>*/}
                       {/*//메뉴리스트 */}
                 </nav>
+                    {<TopMenuAll/>}
                 </header>
             </>
         )
