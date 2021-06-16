@@ -29,6 +29,7 @@ function Header({ title, backFunc, params, noBackBtn }) {
                             <label htmlFor="search" className="label_search"></label>
                         </div>
                     </div>
+                    {/*API 두번 호출하는데... 이 부분 무언가 필요함...*/}
                     {<TopMenu/>}
                      {/*// 검색 영역 */}
                      {/*메뉴리스트 */}
