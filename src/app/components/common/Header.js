@@ -1,8 +1,29 @@
 import React from 'react'
 import TopMenu from "./TopMenu";
-import TopMenuAll from "./TopMenuAll";
 import logo from '../../images/header/logo.png';
 function Header({ title, backFunc, params, noBackBtn }) {
+
+    //메뉴 API호출
+    const menus = TopMenu();
+
+    const menuList = menus.map((data,i) =>
+        <li key={i}><a href="#">{data.cdname}</a>
+            <ul className="lnb">
+                { data.codeList.map((lnb,j) =>
+                    <li key={j}><a href="#">{lnb.cdname}</a></li>
+                )}
+            </ul>
+        </li>
+    );
+    const menuAll = menus.map((data,i) =>
+        <dl key={i}>
+            <dt className="lnb">{data.cdname}</dt>
+            { data.codeList.map((lnb,j) =>
+                <dd key={j}><button to="#">{lnb.cdname}</button></dd>
+            )}
+        </dl>
+    );
+
         return (
             <>
                 <header id="header">
@@ -29,14 +50,15 @@ function Header({ title, backFunc, params, noBackBtn }) {
                             <label htmlFor="search" className="label_search"></label>
                         </div>
                     </div>
-                    {/*API 두번 호출하는데... 이 부분 무언가 필요함...*/}
-                    {<TopMenu/>}
-                     {/*// 검색 영역 */}
-                     {/*메뉴리스트 */}
-                    {/*<jsp:include page="/common/topMenu"/>*/}
-                      {/*//메뉴리스트 */}
+                    <ul className="menu">
+                        {menuList}
+                        <li id="menu_all"><a href="#">메뉴 전체보기</a></li>
+                    </ul>
                 </nav>
-                    {<TopMenuAll/>}
+                    <div className="menu_all">
+                        <h4>사이트맵</h4>
+                        {menuAll}
+                    </div>
                 </header>
             </>
         )
