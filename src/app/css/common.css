@@ -97,8 +97,9 @@ table td, table th { position:relative; }
 #header #gnb .menu li:last-child a.on:after { content:'';}
 
 #header .lnb { position:absolute; z-index:2; margin-top:10px; display:none; background:#FFF; border-top:1px solid #a2582f;  }
+#header .lnb.active{ display: block;}
 #header .lnb li { width:150px; height:30px; line-height:30px; }
-#header .lnb li:hover { color:#a2582f; }
+#header .lnb li:hover { color:#a2582f;}
 #header #menu_all { background:url('../images/ico/ico_all1.png') no-repeat center; width:25px !important; display:block; cursor:pointer; transition:all 2s; }
 #header .all_on { background:url('../images/ico/ico_all3.png') no-repeat center !important; transform:rotate(180deg); transition:all 2s; }
 #header #menu_all a { font-size:0; }

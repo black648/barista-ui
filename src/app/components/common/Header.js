@@ -1,31 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import TopMenu from "./TopMenu";
 import logo from '../../images/header/logo.png';
+import {TopMenuPortlet} from "../portlet/TopMenuPortlet";
+import {TopMenuAllPortlet} from "../portlet/TopMenuAllPortlet";
 function Header({ title, backFunc, params, noBackBtn }) {
+
+
+    const [showMenu, setShowMenu] = useState(false);
 
     //메뉴 API호출
     const menus = TopMenu();
-
-    const menuList = menus.map((data,i) =>
-        <li key={i}><a href="#">{data.cdname}</a>
-            <ul className="lnb">
-                { data.codeList.map((lnb,j) =>
-                    <li key={j}><a href="#">{lnb.cdname}</a></li>
-                )}
-            </ul>
-        </li>
-    );
-    const menuAll = menus.map((data,i) =>
-        <dl key={i}>
-            <dt className="lnb">{data.cdname}</dt>
-            { data.codeList.map((lnb,j) =>
-                <dd key={j}><button to="#">{lnb.cdname}</button></dd>
-            )}
-        </dl>
-    );
+    console.log(menus);
 
         return (
             <>
+
                 <header id="header">
                 <h1 className="logo"><a href="/main/main">
                     <img src={logo} alt="바리스타로고"/></a></h1>
@@ -51,13 +40,12 @@ function Header({ title, backFunc, params, noBackBtn }) {
                         </div>
                     </div>
                     <ul className="menu">
-                        {menuList}
-                        <li id="menu_all"><a href="#">메뉴 전체보기</a></li>
+                        <TopMenuPortlet menus = {menus}/>
                     </ul>
                 </nav>
                     <div className="menu_all">
                         <h4>사이트맵</h4>
-                        {menuAll}
+                        <TopMenuAllPortlet menus = {menus}/>
                     </div>
                 </header>
             </>
