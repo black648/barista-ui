@@ -43,10 +43,7 @@ function Header({ title, backFunc, params, noBackBtn }) {
                         <TopMenuPortlet menus = {menus}/>
                     </ul>
                 </nav>
-                    <div className="menu_all">
-                        <h4>사이트맵</h4>
-                        <TopMenuAllPortlet menus = {menus}/>
-                    </div>
+                    <TopMenuAllPortlet menus = {menus}/>
                 </header>
             </>
         )

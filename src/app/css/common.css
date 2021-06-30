@@ -105,6 +105,7 @@ table td, table th { position:relative; }
 #header #menu_all a { font-size:0; }
 
 #header .menu_all { width:1200px; position:absolute; top:100px; z-index:999; background:#FFF url('../images/header/bg1.jpg') no-repeat right bottom; border-top:1px solid #ccc; box-sizing:border-box; padding:50px 0px 50px 50px; display:none; }
+#header .menu_all.active{ display: block;}
 #header .menu_all a:hover{ color:#a2582f; }
 #header .menu_all>h4 { display:inline-block; float:left; font-size:20px; }
 #header .menu_all>h4:after { content:''; display:inline-block; background:url('../images/header/h_tit.png') no-repeat center; width:20px; height:28px; float:right; margin:0 100px 0 10px; }

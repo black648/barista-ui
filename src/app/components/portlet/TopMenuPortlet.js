@@ -8,10 +8,18 @@ const TopMenuPortlet = (props) => {
     const [isActive, setIsActive] = useState(null);
     const onClick = (i) => {
         console.log(i)
+
         if (isActive === i ) {
-            setIsActive(null)
+            setIsActive(null);
+            if (i === 99) {
+                document.getElementById("menu_all_list").classList.remove("active");
+            }
+
         } else {
             setIsActive(i);
+            if (i === 99) {
+                document.getElementById("menu_all_list").classList.add("active");
+            }
         }
     }
 
