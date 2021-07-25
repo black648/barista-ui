@@ -13,6 +13,7 @@ import bnr_next2 from '../../images/ico/ico_next2.png';
 
 import banner1 from '../../images/main/banner1.jpg';
 import banner2 from '../../images/main/banner2.jpg';
+import {BoardPortlet} from "../portlet/BoardPortlet";
 
 
 class Main extends React.Component {
@@ -128,14 +129,7 @@ class Main extends React.Component {
                                     <h4>알림마당</h4>
                                     <p className="bg"></p>
                                 </div>
-
-                                <ul className="txtList">
-                                    <li><a className="ellipsis" href="#">게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다</a><span>2019-07-11</span></li>
-                                    <li><a className="ellipsis" href="#">게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다</a><span>2019-07-11</span></li>
-                                    <li><a className="ellipsis" href="#">게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다</a><span>2019-07-11</span></li>
-                                    <li><a className="ellipsis" href="#">게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다</a><span>2019-07-11</span></li>
-                                    <li><a className="ellipsis" href="#">게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다</a><span>2019-07-11</span></li>
-                                </ul>
+                                <BoardPortlet instanceId ={1} order = {'registde|desc'} />
                             </div>
                              {/*// 알림마당 */}
                              {/*배너 */}
