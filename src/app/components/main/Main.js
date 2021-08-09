@@ -89,13 +89,7 @@ class Main extends React.Component {
                                     <p className="bg"></p>
                                 </div>
 
-                                <ul className="txtList">
-                                    <li><a className="ellipsis" href="#">게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다</a><span>2019-07-11</span></li>
-                                    <li><a className="ellipsis" href="#">게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다</a><span>2019-07-11</span></li>
-                                    <li><a className="ellipsis" href="#">게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다</a><span>2019-07-11</span></li>
-                                    <li><a className="ellipsis" href="#">게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다</a><span>2019-07-11</span></li>
-                                    <li><a className="ellipsis" href="#">게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다게시글내용입니다</a><span>2019-07-11</span></li>
-                                </ul>
+                                <BoardPortlet instanceId ={"2"} order = {'registde|desc'} />
                             </div>
                             {/*//공지사항 end*/}
                             {/*바로가기*/}
@@ -129,7 +123,7 @@ class Main extends React.Component {
                                     <h4>알림마당</h4>
                                     <p className="bg"></p>
                                 </div>
-                                <BoardPortlet instanceId ={1} order = {'registde|desc'} />
+                                <BoardPortlet instanceId ={"1"} order = {'registde|desc'} />
                             </div>
                              {/*// 알림마당 */}
                              {/*배너 */}

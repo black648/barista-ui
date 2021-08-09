@@ -1,6 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
 import * as DateUtil from "../util/DateUtil";
-import {dateFormat} from "../util/DateUtil";
 
 const BoardPortlet = (props) => {
 
@@ -33,7 +32,7 @@ const BoardPortlet = (props) => {
                 result.length > 0 ? (
                     result.map((data,i) =>
                         <li key={i}>
-                            <a className="ellipsis" href="#">{data.content}</a>
+                            <a className="ellipsis" href="#">{data.title}</a>
                             <span>{DateUtil.dateFormat(data.registde)}</span>
                         </li>
                     )
