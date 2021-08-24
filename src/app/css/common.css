@@ -118,16 +118,11 @@ table td, table th { position:relative; }
 #header .search_box .search_bar .label_search a { font-size:0; }
 
 /* 메인 슬라이드 */
-#boxBanner { position:relative; clear:both; width:1200px; height:500px; overflow:hidden; margin:0 auto; z-index:0; }
-#boxBanner>p { overflow:hidden; height:10px; position:absolute; top:495px; left:20px; z-index:999; }
-#boxBanner>p a { float:left; margin-left:10px; width:60px; height:5px; background:#CCC; font-size:0; color:#FFF; text-indent:-1000px; }
-#boxBanner>p a.on { background:#5a2c18; }
-#boxBanner ul li { float:left; position:relative; }
-#boxBanner ul li p { position:absolute; top:0; left:0; background:rgba(235,235,235,0.5); width:875px; height:415px; padding:80px 50px 50px 80px; box-sizing:border-box; }
-#boxBanner ul li p .tit { position:relative; font-size:18px; display:block; color:#333; background:url('../images/main/bg_tit.png') no-repeat left top; padding:30px 0 0 30px; box-sizing:border-box; }
-#boxBanner ul li p .sub { position:relative; display:block; padding:20px 0 0 32px; font-size:28px; font-weight:bold;  }
-#boxBanner ul li p .sub:after { content:'자세히\A보기'; white-space:pre; font-size:12px; display:block; text-align:center; width:50px; background:#5a2c18; border-radius:50px; color:#FFF; padding:15px 5px; margin-top:100px; position:absolute; left:0; font-family:'NotoKrL'; }
-#boxBanner .bx-start { position:relative; top:-19px; left:0; }
+/*#boxBanner { position:relative; clear:both; width:1200px; height:500px; !*overflow:hidden;*! margin:0 auto; z-index:0; }*/
+/*#boxBanner>p { overflow:hidden; height:10px; position:absolute; top:495px; left:20px; z-index:999; }*/
+/*#boxBanner>p a { float:left; margin-left:10px; width:60px; height:5px; background:#CCC; font-size:0; color:#FFF; text-indent:-1000px; }*/
+/*#boxBanner>p a.on { background:#5a2c18; }*/
+
 
 /* 공지사항 */
 .mainCont { width:1200px; height:310px; margin:0 auto; padding-top:40px; box-sizing:border-box; }
