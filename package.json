@@ -20,6 +20,8 @@
     "react-slick": "^0.28.1",
     "redux": "^4.0.5",
     "redux-actions": "^2.6.5",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-pender": "^2.0.12",
     "redux-thunk": "^2.3.0",
     "slick-carousel": "^1.8.1",
     "styled": "^1.0.0",
@@ -50,5 +52,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "axios": "^0.24.0"
+  },
+  "proxy": "http://localhost:8099"
 }

@@ -36,48 +36,6 @@ class Main extends React.Component {
         return(
             <>
                 <Layout header={{ title: "바리스타-메인", noBackBtn:true}} footer loading>
-                    {/*메인슬라이스*/}
-                    {/*<div id="boxBanner">*/}
-                    {/*    <p>&nbsp;</p>*/}
-                    {/*    <ul>*/}
-                    {/*        <li>*/}
-                    {/*            <a href="#">*/}
-                    {/*                <p>*/}
-                    {/*                    <span className="tit">AAA</span>*/}
-                    {/*                    <span className="sub">aaaa</span>*/}
-                    {/*                </p>*/}
-                    {/*                <img src={mbnr01} alt="배너1"/>*/}
-                    {/*            </a>*/}
-                    {/*        </li>*/}
-                    {/*        <li>*/}
-                    {/*            <a href="#">*/}
-                    {/*                <p>*/}
-                    {/*                    <span className="tit">BBB</span>*/}
-                    {/*                    <span className="sub">bbbb</span>*/}
-                    {/*                </p>*/}
-                    {/*                <img src={mbnr02} alt="배너2"/>*/}
-                    {/*            </a>*/}
-                    {/*        </li>*/}
-                    {/*        <li>*/}
-                    {/*            <a href="#">*/}
-                    {/*                <p>*/}
-                    {/*                    <span className="tit">CCC</span>*/}
-                    {/*                    <span className="sub">cccc</span>*/}
-                    {/*                </p>*/}
-                    {/*                <img src={mbnr03} alt="배너3"/>*/}
-                    {/*            </a>*/}
-                    {/*        </li>*/}
-                    {/*        <li>*/}
-                    {/*            <a href="#">*/}
-                    {/*                <p>*/}
-                    {/*                    <span className="tit">DDD</span>*/}
-                    {/*                    <span className="sub">dddd</span>*/}
-                    {/*                </p>*/}
-                    {/*                <img src={mbnr03} alt="배너4"/>*/}
-                    {/*            </a>*/}
-                    {/*        </li>*/}
-                    {/*    </ul>*/}
-                    {/*</div>*/}
                     <MainBannerSlide />
                     {/*//메인슬라이드*/}
                     {/*mainCont*/}

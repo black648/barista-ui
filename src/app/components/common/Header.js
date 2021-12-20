@@ -10,21 +10,21 @@ function Header({ title, backFunc, params, noBackBtn }) {
 
     //메뉴 API호출
     const menus = TopMenu();
-    console.log(menus);
+    const member = sessionStorage.getItem("member");
 
         return (
             <>
 
                 <header id="header">
-                <h1 className="logo"><a href="/main/main">
+                <h1 className="logo"><a href="/#/">
                     <img src={logo} alt="바리스타로고"/></a></h1>
                 <nav id="gnb">
                     <div className="top_menu">
                         <ul>
                             {/*<c:choose>*/}
                             {/*    <c:when test="${login eq null }">*/}
-                                    <li><a href="/member/login">로그인</a></li>
-                                    <li><a href="/member/mberAgree">회원가입</a></li>
+                            {member !== null ? <li><a href="/#/mypage">내정보</a></li> : <li><a href="/#/login">로그인</a></li>}
+                            {member !== null ? <li><a href="/#/logout">로그아웃</a></li> : <li><a href="/#/memberAgree">회원가입</a></li>}
                                 {/*</c:when>*/}
                                 {/*<c:otherwise>*/}
                                 {/*    <li><a href="/member/mypage">내정보</a></li>*/}

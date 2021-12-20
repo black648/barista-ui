@@ -11,9 +11,9 @@ const TopMenuAllPortlet = (props) => {
                 props.menus.length > 0 ? (
                     props.menus.map((data,i) =>
                         <dl key={i}>
-                            <dt key={i}>{data.cdname}</dt>
+                            <dt key={i}>{data.name}</dt>
                             { data.codeList.map((lnb,j) =>
-                                <dd key={j}><a href="">{lnb.cdname}</a></dd>
+                                <dd key={j}><a href="">{lnb.name}</a></dd>
                             )}
                         </dl>
                     )

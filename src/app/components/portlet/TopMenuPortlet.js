@@ -50,10 +50,10 @@ const TopMenuPortlet = (props) => {
             {
                 props.menus.length > 0 ? (
                     props.menus.map((data,i) =>
-                        <li key={i} onClick={onClick.bind(this,i)}><a>{data.cdname}</a>
+                        <li key={i} onClick={onClick.bind(this,i)}><a>{data.name}</a>
                             <ul ref={dropdownRef} key={i} className={`lnb ${isActive === i ? 'active' : ''}`}>
                                 { data.codeList.map((lnb,j) =>
-                                    <li key={j}><a href="#">{lnb.cdname}</a></li>
+                                    <li key={j}><a href="#">{lnb.name}</a></li>
                                 )}
                             </ul>
                         </li>

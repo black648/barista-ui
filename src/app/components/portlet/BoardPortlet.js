@@ -33,7 +33,7 @@ const BoardPortlet = (props) => {
                     result.map((data,i) =>
                         <li key={i}>
                             <a className="ellipsis" href="#">{data.title}</a>
-                            <span>{DateUtil.dateFormat(data.registde)}</span>
+                            <span>{DateUtil.dateFormat(data.registDe)}</span>
                         </li>
                     )
                 ) : (

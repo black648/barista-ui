@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import {HashRouter, Route, Switch} from "react-router-dom";
 
-import Main from "./app/components/main/Main";
+import Main from "./app/components/page/Main";
+import Login from "./app/components/page/Login";
+import MyPage from "./app/components/page/MyPage";
 // Redux 관련 불러오기
 import store from './stores';
 import {Provider} from "react-redux";
@@ -43,12 +45,13 @@ function App() {
 class App extends Component {
 
     render() {
-
         return (
             <Provider store={store}>
                 <HashRouter>
                     <Switch>
-                        <Route path="/main" component={Main} />
+                        <Route path="/" exact component={Main} />
+                        <Route path="/login" component={Login} />
+                        <Route path="/myPage" component={MyPage} />
                     </Switch>
                 </HashRouter>
             </Provider>
