@@ -1,5 +1,4 @@
 import React, {useEffect, useRef, useState} from "react";
-import {topMenuOn} from "../util/EventUtil";
 
 const TopMenuAllPortlet = (props) => {
 

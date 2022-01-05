@@ -185,7 +185,7 @@ input {  padding:.8em .5em; box-sizing:border-box; border:1px solid #ccc; font-f
 input::-ms-value { background:none; }
 input.full, select.full { width:100%; }
 input.half, select.half { width:100px; }
-input[type=text],input[type=submit],input[type=button],button { -webkit=appearance:none; border-radius:0; }
+input[type=text],input[type=submit],input[type=button],button { -webkit-appearance:none; border-radius:0; }
 button, input[type=button] { cursor:pointer; border:0; }
 .filebox * { float:left; }
 .filebox>label { width:40px; height:40px; display:inline-block; background-image:url('../images/ico/ico_file.png'); background-repeat:no-repeat; background-position:center; background-size:30px; font-size:0; }
