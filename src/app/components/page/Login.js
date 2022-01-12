@@ -47,8 +47,11 @@ class Login extends React.Component {
           mberId: this.state.mberId,
           password: this.state.password
         }).then(function (response) {
-            console.log(JSON.stringify(response.data.resultData.member));
-            commonUtil.setLoginInfo(response.data.resultData.member);
+            if (response.data.resultData.member != null) {
+                commonUtil.setLoginInfo(response.data.resultData.member);
+                // eslint-disable-next-line no-restricted-globals
+                history.back();
+            }
         })
     }
     render() {

@@ -7,4 +7,5 @@ export default {
             "member", JSON.stringify(memberInfo)
         );
     }
+
 }

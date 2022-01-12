@@ -3,6 +3,7 @@ import TopMenu from "./TopMenu";
 import logo from '../../images/header/logo.png';
 import {TopMenuPortlet} from "../portlet/TopMenuPortlet";
 import {TopMenuAllPortlet} from "../portlet/TopMenuAllPortlet";
+import axios from "axios";
 function Header({ title, backFunc, params, noBackBtn }) {
 
 
@@ -10,7 +11,19 @@ function Header({ title, backFunc, params, noBackBtn }) {
 
     //메뉴 API호출
     const menus = TopMenu();
-    const member = sessionStorage.getItem("member");
+    const member = JSON.parse(sessionStorage.getItem("member"))
+
+    const doLogOut = () => {
+        // axios.defaults.headers.common['X-AUTH-TOKEN'] = `${sessionStorage.getItem("tokenKey")}`
+        axios.post("http://localhost:8099/login/logout", {}, {headers: {"X-AUTH-TOKEN": member.tokenKey}
+        }).then(function (response) {
+            sessionStorage.removeItem("member");
+            // eslint-disable-next-line no-restricted-globals
+            history.push(`/#/`);
+            // eslint-disable-next-line no-restricted-globals
+            location.reload();
+        })
+    }
 
         return (
             <>
@@ -21,16 +34,8 @@ function Header({ title, backFunc, params, noBackBtn }) {
                 <nav id="gnb">
                     <div className="top_menu">
                         <ul>
-                            {/*<c:choose>*/}
-                            {/*    <c:when test="${login eq null }">*/}
                             {member !== null ? <li><a href="/#/mypage">내정보</a></li> : <li><a href="/#/login">로그인</a></li>}
-                            {member !== null ? <li><a href="/#/logout">로그아웃</a></li> : <li><a href="/#/memberAgree">회원가입</a></li>}
-                                {/*</c:when>*/}
-                                {/*<c:otherwise>*/}
-                                {/*    <li><a href="/member/mypage">내정보</a></li>*/}
-                                {/*    <li><a href="/member/logout">로그아웃</a></li>*/}
-                                {/*</c:otherwise>*/}
-                            {/*</c:choose>*/}
+                            {member !== null ? <li><a href="#" onClick={doLogOut}>로그아웃</a></li> : <li><a href="/#/memberAgree">회원가입</a></li>}
                         </ul>
                     </div>
                     <div className="search_box">
