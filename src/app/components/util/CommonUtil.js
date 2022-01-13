@@ -1,11 +1,22 @@
-
+import axios from "axios";
 
 export default {
+    //로그인 처리
     setLoginInfo : function (memberInfo) {
         console.log(JSON.stringify(memberInfo));
         sessionStorage.setItem(
             "member", JSON.stringify(memberInfo)
         );
+    },
+
+    //로그아웃 처리
+    resetLoginInfo : function (tokenKey) {
+        // axios.defaults.headers.common['X-AUTH-TOKEN'] = `${sessionStorage.getItem("tokenKey")}`
+        axios.post("http://localhost:8099/login/logout", {}, {headers: {"X-AUTH-TOKEN": tokenKey}
+        }).then(function (response) {
+            sessionStorage.removeItem("member");
+            // eslint-disable-next-line no-restricted-globals
+        })
     }
 
 }

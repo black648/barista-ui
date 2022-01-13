@@ -39,7 +39,6 @@ class Login extends React.Component {
 
             })
         }
-
     }
 
     doLogin = () => {
