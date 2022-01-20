@@ -24,7 +24,7 @@ function Header({ title, backFunc, params, noBackBtn }) {
                     <div className="top_menu">
                         <ul>
                             {member !== null ? <li><a href="/#/mypage">내정보</a></li> : <li><a href="/#/login">로그인</a></li>}
-                            {member !== null ? <LogOut tokenKey={member.tokenKey} />: <li><a href="/#/memberAgree">회원가입</a></li>}
+                            {member !== null ? <LogOut tokenKey={member.tokenKey} />: <li><a href="/#/join">회원가입</a></li>}
                         </ul>
                     </div>
                     <div className="search_box">

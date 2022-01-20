@@ -3,10 +3,12 @@ import {HashRouter, Route, Switch} from "react-router-dom";
 
 import Main from "./app/components/page/Main";
 import Login from "./app/components/page/Login";
+import Join from "./app/components/page/Join";
 import MyPage from "./app/components/page/MyPage";
 // Redux 관련 불러오기
 import store from './stores';
 import {Provider} from "react-redux";
+
 
 /*function Ddddd(props) {
     // console.log(props.fav ) // {fav} 와 같
@@ -51,6 +53,7 @@ class App extends Component {
                     <Switch>
                         <Route path="/" exact component={Main} />
                         <Route path="/login" component={Login} />
+                        <Route path="/join" component={Join} />
                         <Route path="/myPage" component={MyPage} />
                     </Switch>
                 </HashRouter>
