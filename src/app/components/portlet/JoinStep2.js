@@ -1,6 +1,10 @@
 import React, {useEffect, useRef, useState} from "react";
 
-const JoinStep2 = (props) => {
+const JoinStep2 = (step) => {
+
+    const onClick = () => {
+        step(2)
+    }
 
     return (
         <>
@@ -93,7 +97,7 @@ const JoinStep2 = (props) => {
                         </tbody>
                     </table>
                     <div className="tC pT30">
-                        <button className="btn btn_brown btn_check mR10">확인</button>
+                        <button onClick={() => {onClick()}} className="btn btn_brown btn_check mR10">확인</button>
                         <button className="btn btn_grey btn_cancel">취소</button>
                     </div>
                 </div>

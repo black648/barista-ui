@@ -1,6 +1,11 @@
 import React, {useEffect, useRef, useState} from "react";
 
-const JoinStep1 = (props) => {
+const JoinStep1 = ({step}) => {
+
+    const onClick = () => {
+        step(2)
+    }
+
 
     return (
         <>
@@ -56,7 +61,7 @@ const JoinStep1 = (props) => {
                     </div>
 
                     <div className="tC pT30">
-                        <button className="btn btn_brown btn_check" style={{padding:"15px 40px;", backgroundPosition:"17px center;", paddingRight:"20px!important;"}}>모든 약관에 동의합니다.</button>
+                        <button onClick={() => {onClick()}} className="btn btn_brown btn_check" style={{padding:"15px 40px;", backgroundPosition:"17px center;", paddingRight:"20px!important;"}}>모든 약관에 동의합니다.</button>
                     </div>
                 </div>
             </div>

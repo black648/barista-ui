@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import Layout from "../common/Layout";
 import {JoinStep1} from "../portlet/JoinStep1";
 import {JoinStep2} from "../portlet/JoinStep2";
@@ -14,14 +13,26 @@ class Join extends React.Component {
         joinStep : 1
     }
 
+
+
+
+
     render() {
+
+        const getStep = (step) => {
+            this.setState({
+                joinStep: step
+            });
+        }
+        console.log(this.state.joinStep)
+
         let joinPage = "";
         if (this.state.joinStep == 1) {
-            joinPage = <JoinStep1 step = {this.state}/>
+            joinPage = <JoinStep1 step = {getStep}/>
         } else if (this.state.joinStep == 2) {
-            joinPage = <JoinStep2 step = {this.state}/>
+            joinPage = <JoinStep2 step = {getStep}/>
         } else {
-            joinPage = <JoinStep3 step = {this.state}/>
+            joinPage = <JoinStep3 step = {getStep}/>
         }
         return (
             <>
