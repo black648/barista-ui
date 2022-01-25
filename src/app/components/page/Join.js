@@ -36,8 +36,23 @@ class Join extends React.Component {
         }
         return (
             <>
-                <Layout header={{ title: "바리스타-회원가입", noBackBtn:true}} footer loading>
-                    {joinPage}
+                <Layout header={{title: "바리스타-회원가입", noBackBtn: true}} footer loading>
+                    <div className="content">
+                        <div className="join_box">
+                            <ul className="join_flow pB50 clearfix">
+                                <li className={this.state.joinStep == 1 ? "on" : "off"}>
+                                    <p>개인정보<br/>이용동의</p>
+                                </li>
+                                <li className={this.state.joinStep == 2 ? "on" : "off"}>
+                                    <p>정보입력</p>
+                                </li>
+                                <li className={this.state.joinStep == 3 ? "on" : "off"}>
+                                    <p>회원가입<br/>완료</p>
+                                </li>
+                            </ul>
+                            {joinPage}
+                        </div>
+                    </div>
                 </Layout>
             </>
         );

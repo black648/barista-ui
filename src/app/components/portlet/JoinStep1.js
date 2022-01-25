@@ -9,23 +9,8 @@ const JoinStep1 = ({step}) => {
 
     return (
         <>
-            <div className="content">
-                <div className="join_box">
-
-                    <ul className="join_flow pB50 clearfix">
-                        <li className="on">
-                            <p>개인정보<br/>이용동의</p>
-                        </li>
-                        <li>
-                            <p>정보입력</p>
-                        </li>
-                        <li>
-                            <p>회원가입<br/>완료</p>
-                        </li>
-                    </ul>
-
-                    <h4 className="bu05 tit pB10">회원 이용약관</h4>
-                    <textarea readonly="readonly">제 1 장 총 칙
+            <h4 className="bu05 tit pB10">회원 이용약관</h4>
+            <textarea readonly="readonly">제 1 장 총 칙
 
                         제 1 조 (목적)
 
@@ -37,13 +22,13 @@ const JoinStep1 = ({step}) => {
 
                         ① 본 약관은 검정원이 서비스 화면을 통해 게시하고 이용자가 이에 동의함으로써 효력을 발생합니다.
 </textarea>
-                    <div class="tR mT10 pB50">
-                        <input type="checkbox" id="agree1"/>
-                        <label for="agree1">약관을 읽고 동의합니다.</label>
-                    </div>
+            <div class="tR mT10 pB50">
+                <input type="checkbox" id="agree1"/>
+                <label for="agree1">약관을 읽고 동의합니다.</label>
+            </div>
 
-                    <h4 class="bu05 tit pB10">개인정보 수집&middot;활용이용에 관한 동의</h4>
-                    <textarea readonly="readonly">제 1 장 총 칙
+            <h4 class="bu05 tit pB10">개인정보 수집&middot;활용이용에 관한 동의</h4>
+            <textarea readonly="readonly">제 1 장 총 칙
 
                             제 1 조 (목적)
 
@@ -55,15 +40,20 @@ const JoinStep1 = ({step}) => {
 
                             ① 본 약관은 검정원이 서비스 화면을 통해 게시하고 이용자가 이에 동의함으로써 효력을 발생합니다.
                         </textarea>
-                    <div className="tR mT10">
-                        <input type="checkbox" id="agree1"/>
-                        <label for="agree1">약관을 읽고 동의합니다.</label>
-                    </div>
+            <div className="tR mT10">
+                <input type="checkbox" id="agree1"/>
+                <label for="agree1">약관을 읽고 동의합니다.</label>
+            </div>
 
-                    <div className="tC pT30">
-                        <button onClick={() => {onClick()}} className="btn btn_brown btn_check" style={{padding:"15px 40px;", backgroundPosition:"17px center;", paddingRight:"20px!important;"}}>모든 약관에 동의합니다.</button>
-                    </div>
-                </div>
+            <div className="tC pT30">
+                <button onClick={() => {
+                    onClick()
+                }} className="btn btn_brown btn_check" style={{
+                    padding: "15px 40px;",
+                    backgroundPosition: "17px center;",
+                    paddingRight: "20px!important;"
+                }}>모든 약관에 동의합니다.
+                </button>
             </div>
         </>
     );
