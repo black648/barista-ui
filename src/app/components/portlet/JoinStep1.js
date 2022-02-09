@@ -1,11 +1,28 @@
-import React, {useEffect, useRef, useState} from "react";
+import React from "react";
 
 const JoinStep1 = ({step}) => {
 
-    const onClick = () => {
-        step(2)
+    const checkBoxes = document.querySelectorAll("input[name=agree]");
+    const agreements = {
+        agree1: false,
+        agree2: false
+    };
+
+    checkBoxes.forEach((item) => item.addEventListener('click', toggleCheckBox));
+
+    function toggleCheckBox(e) {
+        const {checked, id} = e.target;
+        agreements[id] = checked;
     }
 
+    const onClick = () => {
+        const {agree1, agree2} = agreements;
+        if (!agree1 || !agree2) {
+            alert("회원 이용약관에 동의해주십시오.");
+            return false;
+        }
+        step(2)
+    }
 
     return (
         <>
@@ -23,7 +40,7 @@ const JoinStep1 = ({step}) => {
                         ① 본 약관은 검정원이 서비스 화면을 통해 게시하고 이용자가 이에 동의함으로써 효력을 발생합니다.
 </textarea>
             <div class="tR mT10 pB50">
-                <input type="checkbox" id="agree1"/>
+                <input type="checkbox" name="agree" id="agree1"/>
                 <label for="agree1">약관을 읽고 동의합니다.</label>
             </div>
 
@@ -41,8 +58,8 @@ const JoinStep1 = ({step}) => {
                             ① 본 약관은 검정원이 서비스 화면을 통해 게시하고 이용자가 이에 동의함으로써 효력을 발생합니다.
                         </textarea>
             <div className="tR mT10">
-                <input type="checkbox" id="agree1"/>
-                <label for="agree1">약관을 읽고 동의합니다.</label>
+                <input type="checkbox" name="agree" id="agree2"/>
+                <label for="agree2">약관을 읽고 동의합니다.</label>
             </div>
 
             <div className="tC pT30">
