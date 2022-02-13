@@ -1,10 +1,6 @@
 import React from 'react'
 import Layout from "../common/Layout"
 
-import mbnr01 from '../../images/main/mBnr_01.jpg';
-import mbnr02 from '../../images/main/mBnr_02.jpg';
-import mbnr03 from '../../images/main/mBnr_03.jpg';
-
 import bnr_prev from '../../images/ico/ico_prev3.png';
 import bnr_next from '../../images/ico/ico_next3.png';
 
@@ -68,9 +64,6 @@ class Main extends React.Component {
                                     <a href="#link" className="bnr_prev"><img src={bnr_prev2} alt="이전 목록" /></a>
                                     <a href="#link" className="bnr_next"><img src={bnr_next2} alt="다음 목록" /></a>
                                 </div>
-                                <script type="text/javascript">
-                                    bnr_ac();
-                                </script>
                             </div>
                              {/*// 바로가기 */}
                         </div>
