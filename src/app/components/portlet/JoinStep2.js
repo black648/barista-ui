@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
+import axios from "axios";
 
-const JoinStep2 = (step) => {
+const JoinStep2 = ({step}) => {
     const [checkList, setCheckList] = useState([false, false, false, false, false, false, false])
     const setValidation = (index, value) => {
         setCheckList((checks) => checks.map((c, i) => (i === index ? value == "" ? false : true : c)))
@@ -15,12 +16,15 @@ const JoinStep2 = (step) => {
     const [phone1, setPhone1] = useState("");
     const [phone2, setPhone2] = useState("");
     const [phone3, setPhone3] = useState("");
-    const [password, setPassword] = useState("")
-    const [confirmPassword, setConfirmPassword] = useState("")
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+
+    const [idMessage, setIdMessage] = useState(false);
+    const [passwordMessage, setPasswordMessage] = useState(false);
 
     const onIdHandler = (event) => {
         setId(event.currentTarget.value);
-        setValidation(0, event.currentTarget.value);
+        // setValidation(0, event.currentTarget.value);
     }
     const onNameHandler = (event) => {
         setName(event.currentTarget.value)
@@ -50,12 +54,38 @@ const JoinStep2 = (step) => {
     }
     const onConfirmPasswordHandler = (event) => {
         setConfirmPassword(event.currentTarget.value)
-        setValidation(6, event.currentTarget.value);
+
+        if (event.currentTarget.value === password) {
+            setPasswordMessage("");
+            setValidation(6, event.currentTarget.value);
+        } else {
+            setPasswordMessage("비밀번호가 일치하지 않습니다.");
+        }
+    }
+
+    const checkDuplicateId = (event) => {
+        axios.post("http://localhost:8099/login/checkId", {
+            mberId:id
+        }).then(function (response) {
+            if (!response.data.resultData) {
+                setIdMessage("");
+                setValidation(0, id);
+            } else {
+                setIdMessage("이미 사용중인 아이디입니다.")
+            }
+        })
     }
 
     const onSubmit = (event) => {
-        event.preventDefault()
-        step(2)
+        event.preventDefault();
+        axios.post("http://localhost:8099/login/join", {
+            mberId: id,
+            password: password,
+            email: email + emailDomain,
+            mberName: name
+        }).then(function (response) {
+            step(3)
+        })
     }
 
     return (
@@ -73,7 +103,8 @@ const JoinStep2 = (step) => {
                     <th scope="row" className="must">아이디</th>
                     <td>
                         <input type="text" name="id" value={id} onChange={onIdHandler} />
-                        <button className="btn btn_grey">ID 중복체크</button>
+                        <button className="btn btn_grey" onClick={checkDuplicateId}>ID 중복체크</button>
+                        <span className="Orange">{idMessage}</span>
                     </td>
                 </tr>
                 <tr>
@@ -87,7 +118,7 @@ const JoinStep2 = (step) => {
                     <th scope="row" className="must">비밀번호 확인</th>
                     <td>
                         <input type="password" name="confirmPassword" value={confirmPassword} onChange={onConfirmPasswordHandler} />
-                        {password != confirmPassword ? <span className="Orange">비밀번호가 일치하지 않습니다.</span> : ""}
+                        <span className="Orange">{passwordMessage}</span>
                     </td>
                 </tr>
                 <tr>
@@ -133,9 +164,7 @@ const JoinStep2 = (step) => {
             </table>
             <div className="tC pT30">
                 <button disabled={!isAllChecked}
-                    onClick={() => {
-                        onSubmit()
-                }} className={isAllChecked ? "btn btn_brown btn_check mR10" : "disabled"}>확인
+                    onClick={onSubmit} className={isAllChecked ? "btn btn_brown btn_check mR10" : "disabled"}>확인
                 </button>
                 <button className="btn btn_grey btn_cancel">취소</button>
             </div>

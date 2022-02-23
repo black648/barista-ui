@@ -13,10 +13,6 @@ class Join extends React.Component {
         joinStep : 1
     }
 
-
-
-
-
     render() {
 
         const getStep = (step) => {

@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from "react";
 
-const JoinStep3 = (props) => {
+const JoinStep3 = ({step}) => {
 
     return (
         <>
