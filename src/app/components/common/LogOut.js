@@ -7,6 +7,7 @@ function LogOut({tokenKey, history}) {
 
     const handleClick = () => {
         commonUtil.resetLoginInfo(tokenKey);
+        sessionStorage.removeItem("member");
         history.push("/#/");
 
         // eslint-disable-next-line no-restricted-globals

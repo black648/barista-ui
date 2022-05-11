@@ -10,13 +10,10 @@ export default {
     },
 
     //로그아웃 처리
-    resetLoginInfo : function (tokenKey) {
+    resetLoginInfo : async function (tokenKey) {
         // axios.defaults.headers.common['X-AUTH-TOKEN'] = `${sessionStorage.getItem("tokenKey")}`
-        axios.post("http://localhost:8099/login/logout", {}, {headers: {"X-AUTH-TOKEN": tokenKey}
-        }).then(function (response) {
-            sessionStorage.removeItem("member");
-            // eslint-disable-next-line no-restricted-globals
-        })
+        await axios.post("http://localhost:8099/login/logout", {}, {headers: {"X-AUTH-TOKEN": tokenKey}
+        }).then(function (response) {})
     }
 
 }
