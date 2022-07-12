@@ -9,7 +9,7 @@ import bnr_next2 from '../../images/ico/ico_next2.png';
 
 import banner1 from '../../images/main/banner1.jpg';
 import banner2 from '../../images/main/banner2.jpg';
-import {BoardPortlet} from "../portlet/BoardPortlet";
+import {BoardMainFunc} from "../function/board/BoardMainFunc";
 import MainBannerSlide from "../util/slide/MainBannerSlide";
 
 
@@ -45,7 +45,7 @@ class Main extends React.Component {
                                     <p className="bg"></p>
                                 </div>
 
-                                <BoardPortlet instanceId ={"2"} order = {'registde|desc'} />
+                                <BoardMainFunc iinstanceId = {"2"} pageSize = {"3"} order = {"0|registDe"} />
                             </div>
                             {/*//공지사항 end*/}
                             {/*바로가기*/}
@@ -76,7 +76,7 @@ class Main extends React.Component {
                                     <h4>알림마당</h4>
                                     <p className="bg"></p>
                                 </div>
-                                <BoardPortlet instanceId ={"1"} order = {'registde|desc'} />
+                                <BoardMain instanceId ={"1"} pageSize = {"3"} order = {"0|registDe"} />
                             </div>
                              {/*// 알림마당 */}
                              {/*배너 */}

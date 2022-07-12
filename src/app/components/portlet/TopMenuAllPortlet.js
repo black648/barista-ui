@@ -12,7 +12,7 @@ const TopMenuAllPortlet = (props) => {
                         <dl key={i}>
                             <dt key={i}>{data.name}</dt>
                             { data.codeList.map((lnb,j) =>
-                                <dd key={j}><a href="">{lnb.name}</a></dd>
+                                <dd key={j}><a href={lnb.userDef1}>{lnb.name}</a></dd>
                             )}
                         </dl>
                     )
