@@ -76,7 +76,7 @@ class BoardList extends React.Component {
                                 <th scope="col">조회수</th>
                             </tr>
                             </thead>
-                            <BoardListFunc iinstanceId = {this.state.instanceId}
+                            <BoardListFunc instanceId = {this.state.instanceId}
                                            pageSize = {this.state.pageSize}
                                            order = {this.state.order} />
                         </table>
