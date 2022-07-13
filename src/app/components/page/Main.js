@@ -76,7 +76,7 @@ class Main extends React.Component {
                                     <h4>알림마당</h4>
                                     <p className="bg"></p>
                                 </div>
-                                <BoardMain instanceId ={"1"} pageSize = {"3"} order = {"0|registDe"} />
+                                <BoardMainFunc instanceId ={"1"} pageSize = {"3"} order = {"0|registDe"} />
                             </div>
                              {/*// 알림마당 */}
                              {/*배너 */}
