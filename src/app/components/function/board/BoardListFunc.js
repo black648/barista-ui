@@ -12,7 +12,7 @@ const BoardListFunc = (props) => {
                     result.map((data,i) =>
                         <tr key={i}>
                             <th scope="row" className="tC">{i}</th>
-                            <td className="tC">공지</td>
+                            <td className="tC">{data.codeName}</td>
                             <td><span className="ellipsis" style={{width: "700px"}}>{data.title}</span></td>
                             <td className="tC">{data.registerName}</td>
                             <td className="tC">{data.registDe}</td>
