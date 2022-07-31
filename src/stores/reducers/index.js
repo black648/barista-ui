@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 import gnbMenu from './gnbMenu';
-import layout from './layout';
+// import layout from './layout';
 import member from './member';
 import { penderReducer } from 'redux-pender';
 
 console.log("reducers")
 const rootReducer = combineReducers({
     gnbMenu,
-    layout,
+    // layout,
     member,
     pender: penderReducer
 });

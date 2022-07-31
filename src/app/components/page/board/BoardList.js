@@ -61,9 +61,9 @@ class BoardList extends React.Component {
                             <colgroup>
                                 <col style={{width:"7%"}} />
                                 <col style={{width:"10%"}} />
-                                <col style={{width:"56%"}} />
-                                <col style={{width:"10%"}} />
-                                <col style={{width:"10%"}} />
+                                <col style={{width:"45%"}} />
+                                <col style={{width:"15%"}} />
+                                <col style={{width:"16%"}} />
                                 <col style={{width:"7%"}} />
                             </colgroup>
                             <thead>
