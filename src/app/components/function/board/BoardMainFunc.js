@@ -1,5 +1,6 @@
 import * as DateUtil from "../../util/DateUtil";
 import BoardListApi from "../../api/BoardListApi";
+import {Link} from "react-router-dom";
 
 const BoardMainFunc = (props) => {
     const result = BoardListApi(props);
@@ -11,7 +12,7 @@ const BoardMainFunc = (props) => {
                     result.listCount > 0 ? (
                         result.list.map((data, i) =>
                             <li key={i}>
-                                <a className="ellipsis" href="#">{data.title}</a>
+                                <Link to="/" className="ellipsis">{data.title}</Link>
                                 <span>{DateUtil.dateFormat(data.registDe)}</span>
                             </li>
                         )

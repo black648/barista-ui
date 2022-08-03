@@ -25,7 +25,7 @@ class BoardList extends React.Component {
                                              page = {search.page === undefined ? "0" : search.page}
                                              pageSize = {search.pageSize === undefined ? "30" : search.pageSize}
                                              order = {this.state.order} />
-                        </div>
+                    </div>
                 </Layout>
             </>
         );

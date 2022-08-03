@@ -11,6 +11,7 @@ import banner1 from '../../images/main/banner1.jpg';
 import banner2 from '../../images/main/banner2.jpg';
 import {BoardMainFunc} from "../function/board/BoardMainFunc";
 import MainBannerSlide from "../util/slide/MainBannerSlide";
+import {Link} from "react-router-dom";
 
 
 class Main extends React.Component {
@@ -52,17 +53,17 @@ class Main extends React.Component {
                             <div className="news_bnr">
                                 <div className="bnr_list">
                                     <ul>
-                                        <li className="li_01"><a href="#">이력서 등록</a></li>
-                                        <li className="li_02"><a href="#">일자리 현황</a></li>
-                                        <li className="li_03"><a href="#">교육신청/조회</a></li>
-                                        <li className="li_04"><a href="#">시험접수/조회</a></li>
-                                        <li className="li_05"><a href="#">합격자 조회</a></li>
-                                        <li className="li_06"><a href="#">자격증 발급</a></li>
+                                        <li className="li_01"><Link to="#">이력서 등록</Link></li>
+                                        <li className="li_02"><Link to="#">일자리 현황</Link></li>
+                                        <li className="li_03"><Link to="#">교육신청/조회</Link></li>
+                                        <li className="li_04"><Link to="#">시험접수/조회</Link></li>
+                                        <li className="li_05"><Link to="#">합격자 조회</Link></li>
+                                        <li className="li_06"><Link to="#">자격증 발급</Link></li>
                                     </ul>
                                 </div>
                                 <div className="btn">
-                                    <a href="#link" className="bnr_prev"><img src={bnr_prev2} alt="이전 목록" /></a>
-                                    <a href="#link" className="bnr_next"><img src={bnr_next2} alt="다음 목록" /></a>
+                                    <Link to="#link" className="bnr_prev"><img src={bnr_prev2} alt="이전 목록" /></Link>
+                                    <Link to="#link" className="bnr_next"><img src={bnr_next2} alt="다음 목록" /></Link>
                                 </div>
                             </div>
                              {/*// 바로가기 */}
@@ -83,13 +84,13 @@ class Main extends React.Component {
                             <div className="news_bnr2">
                                 <div className="bnr_list2">
                                     <ul>
-                                        <li><a href="#"><img src={banner1} alt="배너1" /></a></li>
-                                        <li><a href="#"><img src={banner2} alt="배너2" /></a></li>
+                                        <li><Link to="#"><img src={banner1} alt="배너1" /></Link></li>
+                                        <li><Link to="#"><img src={banner2} alt="배너2" /></Link></li>
                                     </ul>
                                 </div>
                                 <div className="btn">
-                                    <a href="#link" className="bnr_prev2"><img src={bnr_prev} alt="이전 배너" /></a>
-                                    <a href="#link" className="bnr_next2"><img src={bnr_next} alt="다음 배너" /></a>
+                                    <Link to="#link" className="bnr_prev2"><img src={bnr_prev} alt="이전 배너" /></Link>
+                                    <Link to="#link" className="bnr_next2"><img src={bnr_next} alt="다음 배너" /></Link>
                                 </div>
                                 <script type="text/javascript">
                                     bnr_ac2();

@@ -4,6 +4,7 @@ import TopMenu from "./TopMenu";
 import logo from '../../images/header/logo.png';
 import {TopMenuPortlet} from "../portlet/TopMenuPortlet";
 import {TopMenuAllPortlet} from "../portlet/TopMenuAllPortlet";
+import {Link} from "react-router-dom";
 function Header({ title, backFunc, params, noBackBtn }) {
 
 
@@ -18,13 +19,14 @@ function Header({ title, backFunc, params, noBackBtn }) {
             <>
 
                 <header id="header">
-                <h1 className="logo"><a href="/#/">
-                    <img src={logo} alt="바리스타로고"/></a></h1>
+                <h1 className="logo">
+                    <Link to="/"><img src={logo} alt="바리스타로고"/></Link>
+                </h1>
                 <nav id="gnb">
                     <div className="top_menu">
                         <ul>
-                            {member !== null ? <li><a href="/#/mypage">내정보</a></li> : <li><a href="/#/login">로그인</a></li>}
-                            {member !== null ? <LogOut tokenKey={member.tokenKey} />: <li><a href="/#/join">회원가입</a></li>}
+                            {member !== null ? <li><Link to="/mypage">내정보</Link></li> : <li><Link to="/login">로그인</Link></li>}
+                            {member !== null ? <LogOut tokenKey={member.tokenKey} />: <li><Link href="/join">회원가입</Link></li>}
                         </ul>
                     </div>
                     <div className="search_box">

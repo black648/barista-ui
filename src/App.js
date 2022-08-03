@@ -6,6 +6,7 @@ import Login from "./app/components/page/Login";
 import Join from "./app/components/page/Join";
 import MyPage from "./app/components/page/MyPage";
 import BoardList from "./app/components/page/board/BoardList";
+import BoardView from "./app/components/page/board/BoardView";
 // Redux 관련 불러오기
 import store from './stores';
 import {Provider} from "react-redux";
@@ -57,6 +58,7 @@ class App extends Component {
                         <Route path="/join" component={Join} />
                         <Route path="/myPage" component={MyPage} />
                         <Route path="/boardList" component={BoardList} />
+                        <Route path="/boardView" component={BoardView} />
                     </Switch>
                 </HashRouter>
             </Provider>

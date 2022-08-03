@@ -1,13 +1,14 @@
 import React from 'react'
 
 import logo from '../../images/footer/logo.png';
+import {Link} from "react-router-dom";
 
 function Footer() {
         return (
              // footer
             <footer id={"footer"}>
                 <div className="foot_warp">
-                    <p className="logo"><a href="#"><img src={logo} alt="바리스타 로고" /></a></p>
+                    <p className="logo"><Link to="/"><img src={logo} alt="바리스타 로고" /></Link></p>
 
                     <ul className="f_txt">
                         <li>26464 강원도 원주시 세계로 10</li>
