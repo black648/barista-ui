@@ -8,8 +8,8 @@ const BoardMainFunc = (props) => {
         <>
             <ul className="txtList">
                 {
-                    result.length > 0 ? (
-                        result.map((data, i) =>
+                    result.listCount > 0 ? (
+                        result.list.map((data, i) =>
                             <li key={i}>
                                 <a className="ellipsis" href="#">{data.title}</a>
                                 <span>{DateUtil.dateFormat(data.registDe)}</span>

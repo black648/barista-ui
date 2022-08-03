@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
+import {Link} from "react-router-dom";
 
 const TopMenuPortlet = (props) => {
 
@@ -53,7 +54,9 @@ const TopMenuPortlet = (props) => {
                         <li key={i} onClick={onClick.bind(this,i)}><a>{data.name}</a>
                             <ul ref={dropdownRef} key={i} className={`lnb ${isActive === i ? 'active' : ''}`}>
                                 { data.codeList.map((lnb,j) =>
-                                    <li key={j}><a href={lnb.userDef1}>{lnb.name}</a></li>
+                                    <li key={j}>
+                                        <Link to={{ pathname: `${lnb.userDef1}`, state: `${lnb.userDef2}`}}> {lnb.name}</Link>
+                                    </li>
                                 )}
                             </ul>
                         </li>

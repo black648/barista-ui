@@ -22,8 +22,7 @@ function BoardListApi(props) {
                 return res.json();
             })
             .then(data => {
-                console.log(data.resultData.list)
-                setResult(data.resultData.list);
+                setResult(data.resultData);
             });
     }, []);
 
