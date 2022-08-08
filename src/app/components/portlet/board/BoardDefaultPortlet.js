@@ -1,7 +1,8 @@
-import * as DateUtil from "../util/DateUtil";
+import * as DateUtil from "../../util/DateUtil";
 import React from "react";
-import BoardListApi from "../api/BoardListApi";
-import {Paging} from "../function/common/Paging";
+import BoardListApi from "../../api/BoardListApi";
+import {Paging} from "../../function/common/Paging";
+import {Link} from "react-router-dom";
 
 const BoardDefaultPortlet = (props) => {
     const result = BoardListApi(props);
@@ -52,7 +53,11 @@ const BoardDefaultPortlet = (props) => {
                             <tr key={i}>
                                 <th scope="row" className="tC">{i}</th>
                                 <td className="tC">{data.codeName}</td>
-                                <td><span className="ellipsis" style={{width: "700px"}}>{data.title}</span></td>
+                                <td>
+                                    <Link to={{ pathname: `/boardView`, state: {id:data.id}}}>
+                                        <span className="ellipsis" style={{width: "700px"}}>{data.title}</span>
+                                    </Link>
+                                </td>
                                 <td className="tC">{data.registerName}</td>
                                 <td className="tC">{DateUtil.dateMinuteFormat(data.registDe)}</td>
                                 <td className="tC">{data.readCnt}</td>

@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../../common/Layout";
-import {BoardDefaultPortlet} from "../../portlet/BoardDefaultPortlet";
+import {BoardDefaultPortlet} from "../../portlet/board/BoardDefaultPortlet";
 
 class BoardList extends React.Component {
 
