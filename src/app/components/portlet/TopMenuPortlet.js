@@ -55,7 +55,8 @@ const TopMenuPortlet = (props) => {
                             <ul ref={dropdownRef} key={i} className={`lnb ${isActive === i ? 'active' : ''}`}>
                                 { data.codeList.map((lnb,j) =>
                                     <li key={j}>
-                                        <Link to={{ pathname: `${lnb.userDef1}`, state: `${lnb.userDef2}`}}> {lnb.name}</Link>
+                                        {/*<Link to={{ pathname: `${lnb.userDef1}`, state: `${lnb.userDef2}`}}> {lnb.name}</Link>*/}
+                                        <Link to={{ pathname: `${lnb.userDef1}`, state: `{${lnb.userDef2}}`}}> {lnb.name}</Link>
                                     </li>
                                 )}
                             </ul>
